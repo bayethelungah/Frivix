@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+:root {
+  /* --primary-color: #2abbaf; */
+  --primary-color: #000036;
+  --secondary-color: #00004e;
+  --light-color: #f4f4f4;
+  --dark-color: #131313;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", "sans serif";
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+/* Navbar Styling */
+.logo {
+  font-family: "Allison";
+  font-size: 80px;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transition: 300ms;
+  transform: scaleX(0);
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}
+
+/* Showcase */
+.showcase {
+  position: relative;
+  height: 400px;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.showcase h1 {
+  font-size: 40px;
+}
+
+.showcase p {
+  margin: 20px 0;
+}
+
+.showcase .grid {
+  overflow: visible;
+  grid-template-columns: 55% 45%;
+  gap: 30px;
+}
+
+.showcase-form {
+  position: relative;
+  top: 60px;
+  height: 350px;
+  width: 400px;
+  padding: 40px;
+  z-index: 100;
+  justify-self: flex-end;
+}
+
+.showcase-form .form-control {
+  margin: 30px 0;
+}
+
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+  border: 0;
+  border-bottom: 1px solid #b4becb;
+  width: 100%;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.showcase-form input:focus {
+  outline: none;
+}
+
+/* Socials */
+.fundamentals {
+  padding-top: 100px;
+}
+
+.fundamentals .grid h3 {
+  font-size: 34px;
+}
+
+.fundamentals .grid p {
+  font-size: 20px;
+}
+
+/* More Info */
+
+.info .grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.info .grid > *:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+/* New Investors */
+
+.learn-more .grid {
+  grid-template-columns: 4fr 3fr;
+}
+
+/* Stocks */
+.stocks .flex {
+  flex-wrap: wrap;
+}
+
+.stocks .card {
+  text-align: center;
+  margin: 18px 10px 40px;
+  transition: transform 200ms ease-in;
+}
+
+.stocks .card:hover {
+  transform: translateY(-10px);
+}
+
+.stocks .card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.stocks h3 {
+  font-weight: lighter;
+  margin-bottom: 1rem;
+}
+
+/* footer */
+
+.footer .socials a {
+  margin: 0 10px;
+}
+
+/* Tablets and Under */
+@media (max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .fundamentals .grid,
+  .learn-more .grid,
+  .stocks .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .showcase {
+    height: auto;
+  }
+
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .showcase-form {
+    justify-self: center;
+    margin: auto;
+  }
+
+  .info .grid > *:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+    overflow: visible;
+  }
+  .logo {
+    font-size: 3rem;
+    top: 2px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .navbar ul {
+    padding: 10px;
+  }
+}
